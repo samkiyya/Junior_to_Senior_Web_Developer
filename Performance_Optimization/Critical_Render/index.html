@@ -1,0 +1,85 @@
+<!--
+HTML
+  #1 Load <style> in <head>
+  #2 Load <script> right before /body
+CSS
+  #3 Load only what is needed
+  #4 Above the fold loading
+  #5 Media attributes
+  #6 Less specificity
+JS
+  #7 Load scripts asynchronously
+  #8 Defer loading of scripts
+  #9 Minimize DOM manipulation
+  #10 Avoid long running Javascript
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Critical Render Path</title>
+
+    <!-- External CSS-->
+    <link rel="stylesheet" href="./style.css" media="all" />
+    <!-- <link
+      rel="stylesheet"
+      href="./style2.css"
+      media="only screen and (min-width:500px)"
+    /> -->
+  </head>
+  <body>
+    <h1>How Fast?</h1>
+    <button>Click Me</button>
+    <!-- #4 Above the fold loading-->
+    <h2 class="important">Important above the fold content</h2>
+
+    <!-- #5 Media attributes-->
+    <img
+      src="https://5.imimg.com/data5/GR/PD/MY-4659120/img-20161230-wa0170-500x500.jpg"
+    />
+    <h2 class="secondary">
+      below the fold content. you won't see it untill the page loads
+    </h2>
+    <!-- Render blocking and Parser blocking JS -->
+    <!--   <script>
+    var button = document.querySelector("button");
+    button.style.color = "red";
+  </script> -->
+    <!-- <script type="text/Javascript">
+      const loadStyleSheet = src=> {
+
+        if(document.createStyleSheet){
+          document.createStyleSheet(src);
+        } else {
+          const stylesheet = document.createElement('link');
+          stylesheet.href = src;
+          stylesheet.type = 'text/css';
+          stylesheet.rel ='stylesheet';
+          document.getElementsByTagName('head')[0].appendChild(stylesheet);
+
+        }
+      }
+       window.onload = function(){
+        console.log('window loaded');
+        loadStyleSheet('./style3.css');
+       }
+    </script> -->
+
+    <!-- script -->
+    <script src="./script.js"></script>
+
+    <!-- Async script -->
+    <script src="./script2.js" async></script>
+
+    <!-- Defer script -->
+    <script src="./script3.js"></script>
+
+    <!-- Minimize DOM manipulation -->
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", function () {
+        alert("Stop Clicking Me!");
+      });
+    </script>
+  </body>
+</html>
