@@ -1,6 +1,6 @@
 # Junior to Senior Web Developer Journey 🚀
 
-Welcome to my **Junior to Senior Web Developer** journey! This repository tracks my progress and learnings through [Zero to Mastery’s Complete Junior to Senior Web Developer Roadmap](https://zerotomastery.io/) course. This space is dedicated to my development as a full-stack web developer, and I’m sharing it to help hiring managers get a clear view of my skills and projects—and for others to learn from my path as well!
+Welcome to my **Junior to Senior Web Developer** journey! This repository tracks my progress and learnings through [Zero to Mastery’s Complete Junior to Senior Web Developer Roadmap](https://zerotomastery.io/courses/junior-to-senior-web-developer-roadmap/) course. This space is dedicated to my development as a full-stack web developer, and I’m sharing it to help hiring managers get a clear view of my skills and projects—and for others to learn from my path as well!
 
 ## 📑 Course Overview
 
