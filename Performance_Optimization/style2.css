@@ -1,7 +1,9 @@
 h1 {
   color: red;
 }
-
+body {
+  border: 5px solid red;
+}
 
 /* bad */
 .header .nav .item .link a.important {
