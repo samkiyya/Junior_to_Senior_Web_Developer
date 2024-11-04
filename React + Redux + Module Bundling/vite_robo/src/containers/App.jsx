@@ -1,8 +1,10 @@
 import { Component } from "react";
 import CardList from "../components/CardList.jsx";
 import SearchBox from "../components/SearchBox.jsx";
-import "./App.css";
 import Scroll from "../components/Scroll.jsx";
+import ErrorBoundary from "../components/ErrorBoundary.jsx";
+import "./App.css";
+
 class App extends Component {
   constructor() {
     super();
@@ -35,11 +37,13 @@ class App extends Component {
           searchChange={this.handleSearchChange}
           searchfield={searchField}
         />
-        {robots.length === 0 ? (
+        {!robots.length ? (
           <h1>Loading...</h1>
         ) : (
           <Scroll>
-            <CardList robots={filteredRobots} />
+            <ErrorBoundary>
+              <CardList robots={filteredRobots} />
+            </ErrorBoundary>
           </Scroll>
         )}
       </div>
