@@ -1,19 +1,17 @@
 import { StrictMode } from "react";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import { createRoot } from "react-dom/client";
 import { createLogger } from "redux-logger";
-import thunkMiddleware from "redux-thunk";
+import { thunk } from "redux-thunk";
 import "tachyons";
 import "./index.css";
 import App from "./containers/App.jsx";
-import { searchRobots } from "./reducers.js";
+import { searchRobots, requestRobots } from "./reducers.js";
 
 const logger = createLogger();
-const store = createStore(
-  searchRobots,
-  applyMiddleware(thunkMiddleware, logger)
-);
+const rootReducer = combineReducers({ searchRobots, requestRobots });
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
