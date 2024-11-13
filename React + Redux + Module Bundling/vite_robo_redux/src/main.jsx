@@ -10,7 +10,10 @@ import App from "./containers/App.jsx";
 import { searchRobots } from "./reducers.js";
 
 const logger = createLogger();
-const store = createStore(searchRobots, applyMiddleware(logger));
+const store = createStore(
+  searchRobots,
+  applyMiddleware(thunkMiddleware, logger)
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
